@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chicwatchdz</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to our chic world</h1>
+        <div class="logo">
+            <img src="assets/logo.png" alt="CHIC WATCH DZ Logo">
+          </div>
+          <div class="header-text">
+          <h1>Welcome to our chic world</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -17,19 +23,8 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-    </header>
-    <div style="text-align:center; margin: 20px 0;">
-        <script type="text/javascript">
-          atOptions = {
-            'key' : 'a0abc64234df66725e01c455262232e2',
-            'format' : 'iframe',
-            'height' : 60,
-            'width' : 468,
-            'params' : {}
-          };
-          document.write('<scr' + 'ipt type="text/javascript" src="//www.highperformanceformat.com/a0abc64234df66725e01c455262232e2/invoke.js"></scr' + 'ipt>');
-        </script>
-      </div>      
+    </div> 
+    </header>       
     <section id="home">
         <h2>Discover elegance and style with Chic Watch, your destination for refined watches.</h2>
         <h2>Find the perfect watch to match your style.</h2>
@@ -41,33 +36,45 @@
         <h2>Our Collection</h2>
         <div class="product-list">
             <div class="product">
-                <img src="assets/Capture.PNG" alt="Watch 1">
-                <h3>Classic Watch</h3>
-                <p>$99.99</p>
-                <button>Add to Cart</button>
+                <a href="assets/IMG_20250422_073932_702.jpg" target="_blank"><img src="assets/IMG_20250422_073932_702.jpg" alt="Watch 1"onclick="openImage(this)" style="width: 150px; cursor: pointer;"></a>
+                <h3>ساعة رجالية</h3>
+                <p>2500 DA</p>
+                <a href="https://wa.me/213671212833?text=Hi%20I%20want%20to%20order%20this%20watch" target="_blank"><button>Add to Cart</button></a>
             </div>
             <div class="product">
-                <img src="assets/Capture1.PNG" alt="Watch 2">
-                <h3>Sporty Watch</h3>
-                <p>$79.99</p>
-                <button>Add to Cart</button>
+                <a href="assets/IMG_20250422_074219_418.jpg" target="_blank"><img src="assets/IMG_20250422_074219_418.jpg" alt="Watch 2"onclick="openImage(this)" style="width: 150px; cursor: pointer;"></a>
+                <h3>ساعة نسائية</h3>
+                <p>2000 DA</p>
+                <a href="https://wa.me/213671212833?text=Hi%20I%20want%20to%20order%20this%20watch" target="_blank"><button>Add to Cart</button></a>
             </div>
         </div>
     </section>
     <section id="gallery">
         <h2>Image Gallery</h2>
         <div class="gallery">
-            <a href="link1.html"><img src="assets/Capture2.PNG" alt="Watch Image 1"></a>
-            <a href="link2.html"><img src="assets/Capture4.PNG" alt="Watch Image 2"></a>
-            <a href="link3.html"><img src="assets/Capture3.PNG" alt="Watch Image 3"></a>
+            <a href="assets/IMG_20250422_073825_598.jpg" target="_blank"><img src="assets/IMG_20250422_073825_598.jpg" alt="Watch Image 1"></a>
+            <a href="assets/IMG_20250422_073839_554.jpg" target="_blank"><img src="assets/IMG_20250422_073839_554.jpg" alt="Watch Image 2"></a>
+            <a href="assets/IMG_20250422_073850_620.jpg" target="_blank"><img src="assets/IMG_20250422_073850_620.jpg" alt="Watch Image 3"></a>
+            <a href="assets/IMG_20250422_073925_532.jpg" target="_blank"><img src="assets/IMG_20250422_073925_532.jpg" alt="Watch Image 4"></a>
+            <a href="assets/IMG_20250422_073932_702.jpg" target="_blank"><img src="assets/IMG_20250422_073932_702.jpg" alt="Watch Image 5"></a>
+            <a href="assets/IMG_20250422_073940_897.jpg" target="_blank"><img src="assets/IMG_20250422_073940_897.jpg" alt="Watch Image 6"></a>
+            <a href="assets/IMG_20250422_074219_418.jpg" target="_blank"><img src="assets/IMG_20250422_074219_418.jpg" alt="Watch Image 7"></a>
         </div>
     </section>
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Email: support@watchstore.com</p>
+        <li>
+            <a href="https://wa.me/213671212833" target="_blank">
+                <i class="fab fa-whatsapp"></i>WhatsApp +213671212833
+            </a>
+        </li>
     </section>
     <footer>
-        <p>&copy; 2025 Watch Store. All rights reserved.</p>
+        <p2>&copy; 2025 Watch Store. All rights reserved.</p2>
     </footer>
+    <div id="imgModal" class="img-modal" onclick="closeImage()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+      </div>
 </body>
 </html>

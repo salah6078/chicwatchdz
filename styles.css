@@ -1,47 +1,82 @@
 *{
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-
+:root {
+    --gold: #d4af37;
+    --dark-bg: #1e1e1e;
+  }
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Playfair Display', serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
+    background-color: var(--dark-bg);
     color: white;
-    padding: 20px;
 }
-
+header {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px 40px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+h1, h2 ,h3 {
+    font-family: 'Playfair Display', serif;
+}
+h3 {
+    color: #000;
+}   
+p {
+    color: red;
+}    
+.logo {
+    margin-right: 380px;
+}
+.logo img {
+    height: 120px;
+}
+.header-center {
+    flex: 1;
+    text-align: center;
+  }
+  .header-center h1 {
+    font-size: 28px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
-
 nav ul li {
     display: inline;
     margin: 0 15px;
 }
-
 nav ul li a {
-    color: white;
+    color: var(--gold);
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
-
+nav ul li a:hover {
+    color: #ffffff;
+}
 section {
     padding: 50px 20px;
 }
-
 .product-list {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
-
 .product {
     background: white;
     padding: 20px;
@@ -49,26 +84,25 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
 .product img {
     width: 150px;
     height: auto;
     border-radius: 5px;
 }
-
 button {
-    background-color: #333;
-    color: white;
+    background-color: var(--gold);
+    color: #000;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
-
 button:hover {
-    background-color: #555;
+    background-color: #c9a63f;
+    color: white;
 }
-
 .gallery {
     display: flex;
     justify-content: center;
@@ -76,14 +110,12 @@ button:hover {
     flex-wrap: wrap;
     padding: 20px;
 }
-
 .gallery img {
     width: 200px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 footer {
     background-color: #333;
     color: white;
@@ -92,7 +124,6 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
 #home {
     background-image: url(assets/photo1.PNG); 
     background-size: cover;  
@@ -101,3 +132,109 @@ footer {
     padding: 50px 20px;
     color: white;  
 }
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  .fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .gallery-grid {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .gallery-grid img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Fullscreen modal */
+  .img-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+  }
+@media (max-width: 768px) {
+
+    header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+  
+    .logo {
+      margin: 0 0 15px 0;
+    }
+  
+    .header-center h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  
+    .product-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .gallery {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    button {
+      width: 80%;
+      max-width: 300px;
+    }
+  
+    section {
+      padding: 30px 15px;
+    }
+  
+    #home {
+      padding: 30px 15px;
+      background-position: center;
+    }
+  }
